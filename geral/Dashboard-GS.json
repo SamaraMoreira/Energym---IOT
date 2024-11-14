@@ -1,0 +1,256 @@
+[
+    {
+        "id": "dccbae51f974fb68",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "408598f2ef6cecd4",
+        "type": "mqtt in",
+        "z": "dccbae51f974fb68",
+        "name": "",
+        "topic": "carregador/temperatura",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e786bfd30ce491f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "4ef0ecf4a6379220"
+            ]
+        ]
+    },
+    {
+        "id": "b09672d38aba16d4",
+        "type": "mqtt in",
+        "z": "dccbae51f974fb68",
+        "name": "",
+        "topic": "carregador/corrente",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e786bfd30ce491f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "4672bff4d3b5d252"
+            ]
+        ]
+    },
+    {
+        "id": "4ef0ecf4a6379220",
+        "type": "ui_gauge",
+        "z": "dccbae51f974fb68",
+        "name": "TEMP",
+        "group": "c0c2b06ffae8ecbb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#00c8f0",
+            "#e30202",
+            "#990000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4672bff4d3b5d252",
+        "type": "ui_gauge",
+        "z": "dccbae51f974fb68",
+        "name": "Corrente",
+        "group": "c0c2b06ffae8ecbb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Corrente",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#0086b3",
+            "#00ace6",
+            "#3a5ecb"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 600,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a5b8ca06b1088446",
+        "type": "mqtt in",
+        "z": "dccbae51f974fb68",
+        "name": "",
+        "topic": "carregador/carga",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e786bfd30ce491f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "666dce196f7ff840"
+            ]
+        ]
+    },
+    {
+        "id": "666dce196f7ff840",
+        "type": "ui_gauge",
+        "z": "dccbae51f974fb68",
+        "name": "Carga",
+        "group": "c0c2b06ffae8ecbb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Carga",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#8ae5cb",
+            "#21e4a3",
+            "#00ff40"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3cca0293c64b3dcd",
+        "type": "mqtt in",
+        "z": "dccbae51f974fb68",
+        "name": "",
+        "topic": "carregador/umidade",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e786bfd30ce491f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "adb345f8948b1a4c"
+            ]
+        ]
+    },
+    {
+        "id": "adb345f8948b1a4c",
+        "type": "ui_gauge",
+        "z": "dccbae51f974fb68",
+        "name": "Umidade",
+        "group": "c0c2b06ffae8ecbb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#78cdde",
+            "#3e56d0",
+            "#06005c"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e786bfd30ce491f3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c0c2b06ffae8ecbb",
+        "type": "ui_group",
+        "name": "Controle",
+        "tab": "eaa9703f9af61a91",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eaa9703f9af61a91",
+        "type": "ui_tab",
+        "name": "Energym",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

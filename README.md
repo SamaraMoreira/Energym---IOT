@@ -35,6 +35,20 @@ Fluxo de dados implementado no **Node-Red**:
 ![Fluxo Node-Red](https://drive.google.com/uc?id=1FuXiEM4zqZZxVn8x75avT2xfqD0OB3C1)
 
 ---
+## **Sistema de Monitoramento e Controle com ESP32**
+
+O projeto integra sensores, controle remoto e visualização de dados, com destaque para:
+
+1. **Conexão Wi-Fi e MQTT:** Comunicação contínua com o broker MQTT para envio de dados e comandos.
+2. **Monitoramento:** Sensores DHT22 verificam temperatura (>50°C) e umidade (>80%).
+3. **Controle do Sistema:** Ativação/desativação remota via MQTT e botão físico; relé controla o carregador.
+4. **Alertas:** Desativação do carregador, buzzer e LED vermelho indicam condições críticas.
+5. **Cálculo da Carga:** Mede corrente e simula carga com base no tempo.
+6. **Interface OLED e Dashboard:** Informações em tempo real no display e no Node-Red.
+7. **Publicação de Dados:** Leituras enviadas via MQTT para integração com outros sistemas.
+8. **Gestão de Estados:** Automatização do carregamento e alerta para carga completa.
+
+Energym une saúde, tecnologia e sustentabilidade em uma experiência inovadora para o usuário e o planeta.
 
 ## **Configurações dos Nós Utilizados**
 

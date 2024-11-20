@@ -49,6 +49,84 @@ O projeto integra sensores, controle remoto e visualização de dados, com desta
 8. **Gestão de Estados:** Automatização do carregamento e alerta para carga completa.
 
 Energym une saúde, tecnologia e sustentabilidade em uma experiência inovadora para o usuário e o planeta.
+Com base no conteúdo do seu projeto, segue um exemplo de instruções detalhadas para o README.md para ajudar outros desenvolvedores a replicar e testar sua solução.
+
+---
+
+## 🛠️ Configuração do Ambiente
+
+Siga os passos abaixo para configurar e testar este projeto.
+
+### 1. Pré-requisitos
+- [PlatformIO IDE](https://platformio.org/) instalado (pode ser usado com Visual Studio Code).
+- Placa de desenvolvimento ESP32.
+- Broker MQTT (como [test.mosquitto.org](https://test.mosquitto.org/)).
+- Display OLED compatível com SSD1306.
+- Sensor DHT22.
+- Outros componentes (potenciômetro, relé, buzzer, LED).
+
+### 2. Clonando o Projeto
+Clone o repositório diretamente do GitHub:
+
+```bash
+git clone https://github.com/SamaraMoreira/Energym-IOT.git
+cd Energym-IOT
+```
+
+### 3. Instalando Dependências
+As dependências do projeto são gerenciadas automaticamente pelo PlatformIO. Certifique-se de que os seguintes pacotes estejam listados no arquivo `platformio.ini`:
+
+```ini
+lib_deps = 
+	knolleary/PubSubClient@^2.8.0
+	adafruit/Adafruit GFX Library@^1.11.11
+	adafruit/Adafruit SSD1306@^2.5.13
+	adafruit/DHT sensor library@^1.4.6
+	adafruit/Adafruit Unified Sensor@^1.1.14
+```
+
+Ao abrir o projeto no PlatformIO, as bibliotecas serão baixadas automaticamente.
+
+### 4. Configurando a Rede Wi-Fi e o Broker MQTT
+Edite o arquivo principal (`src/esp32-http-server.ino`) para adicionar suas credenciais de Wi-Fi e as configurações do broker MQTT:
+
+```cpp
+const char* ssid = "SEU_WIFI";
+const char* password = "SUA_SENHA";
+const char* mqttServer = "test.mosquitto.org";
+const int mqttPort = 1883;
+```
+
+### 5. Simulando no Wokwi
+Este projeto pode ser simulado diretamente no [Wokwi](https://wokwi.com/). O arquivo de configuração `wokwi.toml` está incluído para compatibilidade. Basta abrir o projeto no Wokwi e iniciar a simulação.
+
+### 6. Compilando
+ Compile e faça o upload do firmware:
+
+```bash
+pio run --target upload
+```
+
+### 7. Testando o Projeto
+1. Verifique no monitor serial (`PlatformIO > Monitor Serial`) as leituras e o status da conexão Wi-Fi.
+2. Utilize um cliente MQTT (como MQTT Explorer) para enviar e receber mensagens nos tópicos definidos.
+3. Monitore a exibição de dados no display OLED e os alertas sonoros/visuais.
+
+### 8. Estrutura do Projeto
+
+```plaintext
+Energym-IOT
+├── .vscode
+│   └── extensions.json
+├── geral
+├── src
+│   └── esp32-http-server.ino  # Código principal
+├── .gitignore
+├── diagram.json               # Arquivo do circuito
+├── README.md                  # Instruções detalhadas
+├── platformio.ini             # Configuração do PlatformIO
+└── wokwi.toml                 # Configuração para simulação Wokwi
+```
 
 ## **Configurações dos Nós Utilizados**
 
